@@ -1,12 +1,12 @@
-title: John Smith
+title: Kyle Smith
 description: My Personal Blog
-author: John Smith
-logo: /hcz-jekyll-blog/static/img/avatar.png
+author: Kyle Smith
+logo: /static/img/avatar.png
 github: https://github.com/codeasashu
 about: Freelance developer
 
-baseurl: "https://codeasashu.github.io/hcz-jekyll-blog"
-url: "https://codeasashu.github.io/hcz-jekyll-blog"
+baseurl: "https://kylehao.github.io"
+url: "https://codeasashu.github.io/hcz-jekyll-blogkylehao.github.io"
 
 allowsearch: true
 
