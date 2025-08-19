@@ -1,64 +1,38 @@
-<div class="container">
-  <div class="row">
-    <div class="col col-12">
-      <!-- begin header -->
-      <header class="header">
-
-        <div class="logo">
-          <a class="logo__link" href="{{site.baseurl}}/">
-          {%if site.data.settings.logo %}
-            <img class="logo__image" src="https://cdn.rryyz.com/zolan/images/logo.jpg" alt="{{ site.data.settings.title }}">
-          {% else %}
-            {{ site.data.settings.title }}
-          {% endif %}
-          </a>
-        </div>
-
-        <nav class="main-nav">
-
-          <div class="main-nav__box">
-            <div class="nav-icon__close">
-              <i class="ion ion-ios-close-circle-outline"></i>
-            </div>
-
-            <div class="nav__title">Menu</div>
-
-            <ul class="nav__list list-reset">
-              <li class="nav__item">
-                <a href="{{site.baseurl}}/" class="nav__link">首页</a>
-              </li>
-			  <li class="nav__item">
-                <a href="{{site.baseurl}}/tags/" class="nav__link">TAGS</a>
-              </li>
-			  <li class="nav__item">
-                <a href="http://772222.xyz" class="nav__link" target="_blank">图库</a>
-              </li>
-			  <li class="nav__item">
-                <a href="https://www.kkkk.info/" class="nav__link" target="_blank">米表</a>
-              </li>
-			  <li class="nav__item">
-                <a href="http://blog.444.info/" class="nav__link" target="_blank">博客</a>
-              </li>
-			  <li class="nav__item">
-                <a href="https://www.u7u.net/" class="nav__link" target="_blank">音乐</a>
-              </li>
-			  <li class="nav__item">
-                <a href="{{site.baseurl}}/about/" class="nav__link">关于</a>
-              </li>
-			  
-            </ul>
-
-          </div>
-        </nav>
-
-        <div class="nav-buttons">
-          <i class="nav__icon nav__icon-menu ion ion-md-menu" aria-label="Menu Icon"></i>
-          <i class="nav__icon nav__icon-search ion ion-md-search" aria-label="Search Icon"></i>
-        </div>
-
-        <div class="header__overlay"></div>
-      </header>
-      <!-- end header -->
+<header class="navbar navbar-default navbar-fixed-top" style="background-color:#fff;">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="{{ '/' | prepend: site.baseurl }}" class="inverse active">Home</a></li>
+        {% for category in site.categories %}
+          <li><a href="{{ site.baseurl }}/category.html#{{ category[0] }}" class="inverse">{{ category[0]] }}</a></li>
+        {% endfor %}
+        {% for my_page in site.pages %}
+          {% if my_page.title and my_page.title != 'Category' %}
+          <li><a href="{{ my_page.url | prepend: site.baseurl }}" class="inverse">{{ my_page.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li class="social-li">
+            {% for social in site.data.social %}
+            <a class="social-a inverse" href="{{ social.url }}" _target="_blank"><i class="fa fa-{{ social.name }}"></i></a>
+            {% endfor %}
+          </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="text-center">
+  <div class="container">
+    <h1 class="docs-title"><a class="docs-title-border noactive" href="{{ '/' | prepend: site.baseurl }}">{{ site.title }}</a></h1>
   </div>
 </div>
